@@ -15,4 +15,5 @@
 	left: 50%;
 	position: absolute;
 	box-shadow: 10px 10px 54px -6px rgba(0,0,0,0.75);
+	transform: translate(-50%, -50%);
 }
