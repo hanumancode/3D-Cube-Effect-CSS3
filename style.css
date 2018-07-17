@@ -1,19 +1,53 @@
-.container {
-	font-size: 20px;
-	width: 100%;
-	min-height: 800px;
-	text-align: left;
-	position: absolute;
-	top: 80px;
-	display: block;
+html, body {
+	
+	margin: auto;
+    width: 50%;
+	padding: 0;
+	background: aquamarine;
 }
 
-.cube-container {
+.wrap {
+	margin-top: 150px;
+	perspective: 1000px;
+	perspective-origin: 50% 50%;
+}
+.cube {
+	transform-style: preserve-3d;
 	width: 250px;
-	height: 250px;
-	top: 50%;
-	left: 50%;
+	height: 250px
+	margin: auto;
+	position: relative;
+}
+
+.cube img{
 	position: absolute;
-	box-shadow: 10px 10px 54px -6px rgba(0,0,0,0.75);
-	transform: translate(-50%, -50%);
+	opacity: 0.8;
+}
+
+.cube img:nth-child(1) {
+	transform: rotateY(0deg) translateZ(125px);
+}
+.cube img:nth-child(2) {
+	transform: rotateY(90deg) translateZ(125px);
+}
+.cube img:nth-child(3) {
+	transform: rotateY(180deg) translateZ(125px);
+}
+.cube img:nth-child(4) {
+	transform: rotateY(-90deg) translateZ(125px);
+}
+.cube img:nth-child(5) {
+	transform: rotateX(90deg) translateZ(125px);
+}	
+.cube img:nth-child(6) {
+	transform: rotateX(-90deg) translateZ(125px);
+}
+
+@keyframes loop {
+	from{transform: rotateX(0deg) rotateY(0deg);}
+	to{transform: rotateX(360deg) rotateY(360deg);}
+}
+
+.cube {
+	animation: loop 10s linear infinite;
 }
